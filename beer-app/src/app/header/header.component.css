@@ -1,0 +1,29 @@
+#banner {
+  overflow: hidden;
+  padding: 10px 20px;
+  color: #F3C677;
+  background-color: #0C0A3E;
+  border-radius: 10px;
+}
+
+p {
+  display: inline-block;
+  font-family: sans-serif;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: #858585;
+  font: inherit;
+  font-family: sans-serif;
+  margin: 0;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: grab;
+}
