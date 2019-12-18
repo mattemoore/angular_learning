@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  search() {
+  async search() {
     if (this.searchForm.invalid || !this.searchForm.dirty) {
       return;
     }
@@ -28,8 +28,5 @@ export class HeaderComponent implements OnInit {
     let searchString = field.value;
     this.service.search(searchString);
     this.searchForm.reset({searchTerm: searchString});
-    // TODO:
-    // Use some type of Observable to send search result updates to beer-list-component
-    // Do we do that here or in the service?
   }
 }

@@ -1,0 +1,12 @@
+#footer {
+  clear:both;
+  padding: 10px 20px;
+  color: #F3C677;
+  background-color: #0C0A3E;
+  border-radius: 10px;
+}
+
+p {
+  display: inline-block;
+  font-family: sans-serif;
+}

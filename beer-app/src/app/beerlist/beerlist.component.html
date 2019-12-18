@@ -1,0 +1,7 @@
+<p *ngIf="searchCount == 1">Enter a search term in the header and click the Search button.</p>
+<p *ngIf="searchCount > 1 && beers.length == 0">No results found.</p>
+<div class="beer" *ngFor="let beer of beers">
+  <p>{{beer.name}}</p>
+  <img src={{beer.image_url}} alt='A picture of the beer called {{beer.name}}.' />
+  <!-- TODO: Modal opens on click -->
+</div>

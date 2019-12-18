@@ -11,6 +11,11 @@ p {
   font-family: sans-serif;
 }
 
+form {
+  display: inline-block;
+  font-family: sans-serif;
+}
+
 button,
 input,
 optgroup,
@@ -18,7 +23,6 @@ select,
 textarea {
   color: #858585;
   font: inherit;
-  font-family: sans-serif;
   margin: 0;
   margin: 10px;
   border-radius: 5px;

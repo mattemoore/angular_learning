@@ -1,0 +1,6 @@
+<div id='footer' *ngIf="this.apiStats.numCalls != 0">
+    <p>
+        Number of calls maximum: {{this.apiStats.numCalls}}<br />
+        Number of calls left: {{this.apiStats.numCallsLeft}}
+    </p>
+</div>
