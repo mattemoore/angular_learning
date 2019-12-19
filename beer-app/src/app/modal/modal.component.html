@@ -1,0 +1,29 @@
+<div class='modal-background' (click)="closed.next()"></div>
+<div class='modal'>
+  <h2>{{beer.name}}</h2>
+  <img src={{beer.image_url}} alt='A picture of the beer called {{beer.name}}.' />
+  <p>{{beer.tagline}}</p>
+  <p>{{beer.description}}</p>
+  <ul slot='details' class='definition-list" style="float: right;'>
+    <li>abv: {{beer.abv}}</li>
+    <li>ibu: {{beer.ibu}}</li>
+    <li>hops:
+      <ul>
+        <li *ngFor="let hop of beer.ingredients.hops">{{hop.name}} ({{hop.add}} - {{hop.attribute}})</li>
+      </ul>
+    </li>
+    <li>malts:
+      <ul>
+          <li *ngFor="let malt of beer.ingredients.malt">{{malt.name}}</li>
+      </ul>
+    </li>
+    <li>yeast: {{beer.ingredients.yeast}}</li>
+    <li>food pairing:</li>
+    <ul>
+        <li *ngFor="let pairing of beer.food_pairing">{{pairing}}</li>
+    </ul>
+  </ul>
+  <div id='button'>
+    <button (click)="closed.next()">Close</button>
+  </div>
+</div>

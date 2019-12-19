@@ -8,11 +8,15 @@ import { ApiStats } from '../../models/apiStats'
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
+
 export class FooterComponent implements OnInit {
+
   apiStats: ApiStats;
+
   constructor(private service: SearchService) { }
 
   ngOnInit() {
     this.service.apiStats$.subscribe(apiStats => this.apiStats = apiStats);
   }
+
 }

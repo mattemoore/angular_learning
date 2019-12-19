@@ -11,13 +11,16 @@ import { SearchService } from '../search.service';
 })
 
 export class HeaderComponent implements OnInit {
+
   searchForm: FormGroup;
+
   constructor(private service: SearchService, private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.searchForm = this.formBuilder.group({
       searchTerm: ['', Validators.required]
     })
+    document.body.querySelector<HTMLElement>('[formcontrolname="searchTerm"]').focus();
   }
 
   async search() {

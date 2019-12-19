@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { Beer } from '../models/beer';
+import { Beer, Ingredients } from '../models/beer';
 import { ApiStats } from '../models/apiStats';
 
 @Injectable({
@@ -9,10 +9,11 @@ import { ApiStats } from '../models/apiStats';
 })
 
 export class SearchService {
+
   searchResults$: BehaviorSubject<Beer[]> = new BehaviorSubject<Beer[]>([]);
   apiStats$: BehaviorSubject<ApiStats> = new BehaviorSubject<ApiStats>({numCalls: 0, numCallsLeft: 0});
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   async search(searchTerm: string)  {
     // TODO: Replace the fetch and convert with HTTPClient
@@ -20,12 +21,8 @@ export class SearchService {
     const response = await fetch(searchURL);
     const json = await response.json();
 
-    // TODO: Is there a better way to generate typed objects from JSON?
-    const beers: Array<Beer> = [];
-    json.forEach(el => {
-      const beer:Beer = {name: el['name'], image_url: el['image_url'], tagline: el['tagline']};
-      beers.push(beer);
-    });
+    // TODO: Is the service the best place to do this?
+    const beers: Array<Beer> = json;
     this.searchResults$.next(beers)
 
     const numCalls: number = Number(response.headers.get('x-ratelimit-limit'));

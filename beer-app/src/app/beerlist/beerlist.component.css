@@ -3,23 +3,35 @@ p {
   margin: 10px;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  width: 85px;
+  height: 200px;
+}
+
 .beer {
   float: left;
-  width: 200px; height: 250px;
-  padding: 20px 10px; margin: 10px;
+  width: 200px;
+  height: 250px;
+  padding: 20px 10px;
+  margin: 10px;
   font-family: sans-serif;
-  color: #f3c677; text-align: center;
+  color: #f3c677;
+  text-align: center;
   background-color: #7b1e7a;
   border-radius: 10px;
 }
+
 .beer p {
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .beer:hover {
   background-color: #b33f62;
   cursor: grab;
-}
-img {
-  width: 85px; height: 200px;
-  padding: 10px 10px 20px 20px;
 }
